@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MrYanG</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    /*
+        ## JSON.parse()
+
+        - 从服务器接收的是字符串数据，使用JSON.parse() 可以将其转换为JavaScript对象
+        - 解析数据
+
+     */
+
+
+    //text为从服务器接收的数据格式，因为服务器不可能存储对象格式
+    var text = '{ "name":"Boolean_YanG", "alexa": 10, "site":"www.sprit.vip" }'
+
+    text = JSON.parse(text);
+    console.log(text); //Object {name: "Boolean_YanG", alexa: 10, site: "www.sprit.vip"}
+
+
+
+    var time = '{"name": "Mr.YanG", "initDate": "2017-7-23"}';
+
+    time = JSON.parse(time);
+    console.log(time.initDate);// 2017-7-23
+
+    //JSON不能存储Date对象，需要先把JSON转换为字符串再转换为Date对象
+    var initDate = new Date(time.initDate); //Sun Jul 23 2017 00:00:00 GMT+0800 (中国标准时间)
+
+    console.log(initDate);
+
+
+    var timeNow = new Date();
+
+    console.log(timeNow);
+
+
+    //解析函数 JSON不允许包含函数，但可以将函数作为字符串存储，然后再解析
+
+    var fun = '{"fun1": "function(){ console.log(1000) }"}'
+
+    fun = JSON.parse(fun);
+
+    console.log(fun.fun1);
+
+
+    //eval (string): 函数可以计算某个字符串，并执行其中的代码
+    eval("var a=1");
+    eval("var obj = {name: 'invoker'}");
+    fun1 =  eval("("+ fun.fun1 + ")");
+
+    console.log(obj); //Object {name: "invoker"}
+    fun1(); // 1000
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

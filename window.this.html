@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MrYanG</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    let obj = {
+
+    };
+
+   console.log(this);
+
+   setTimeout(function () {
+       console.log(this);
+   }.bind(obj), 2000);
+   setTimeout(() => {
+       console.log(this)
+   }, 3000)
+
+
+</script>
+</body>
+</html>

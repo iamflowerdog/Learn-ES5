@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MrYanG</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    /*
+        #### JSON数组
+        * 数组作为JSON对象
+        * 写法
+            * 实例
+                  ["facebook", "juggernaut", "function(){}"]
+            * JSON数组中的值必须是合法的JSON数据类型(数字，字符串，对象，数组，null，布尔值)
+            * JSON数组中的值也可以是JavaScript中的表达式，函数，undefined，日期
+
+
+     */
+
+    var jsonArr = {
+        "name": "Boolean_YanG",
+        "version": 1.122,
+        "fun": [
+            "play",
+            "function(){}",
+            "undefined",
+            "Data().now"
+        ]
+    };
+
+
+    //使用for in 来遍历数组
+    for(x in jsonArr.fun){
+        console.log(x, jsonArr.fun[x]); // 0 play, 1 function(){} ....
+    }
+
+
+    //也可以使用for循环
+    for(i = 0; i< jsonArr.fun.length; i++){
+        console.log(i, jsonArr.fun[i]); // 0 "play", 1 "function(){}"
+    }
+
+
+</script>
+</body>
+</html>

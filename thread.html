@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MrYanG</title>
+</head>
+<body>
+
+    <button id="btn">启动定时器</button>
+<script type="text/javascript">
+
+
+    document.getElementById("btn").onclick = function () {
+
+        var start = Date.now();
+        setTimeout(function () {
+            console.log("我是超时调用函数", Date.now() - start);
+        }, 200);
+
+        for(var i=0; i<1000000000; i++) {
+
+        }
+        console.log("完成事件所用的时间", Date.now() - start);
+    };
+
+
+
+
+
+</script>
+</body>
+</html>

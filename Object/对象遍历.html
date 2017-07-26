@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MrYanG</title>
+</head>
+<body>
+<script type="text/javascript">
+
+
+    /*
+        - for in 表达式可以遍历对象，数组
+        - 语法
+            * for (x in obj){}
+     */
+
+    var obj = {
+        name: "juggernaut",
+        age: 19
+    };
+
+    for(x in obj){
+        console.log(x, obj[x]);
+    }
+
+
+    var arr = ["invoker", "sven", "rubic"];
+
+    for (x in arr){
+        console.log(x, arr[x]);
+    }
+
+
+    arr.splice(0, 0, "lina");
+
+    console.log(arr);
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MrYanG</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    var i = 1;
+
+    function foo(i) {
+        if (i < 2){
+            foo(i + 1)
+        }
+
+        console.log(i);
+    }
+
+    foo(i);
+
+
+
+
+
+    function fn1(i) {
+
+        if (i == 0){
+            return
+        }
+        /*console.log(i)*/
+        fn1(i-1)
+        console.log(i)
+    }
+
+    fn1(5)
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MrYanG</title>
+</head>
+<body>
+<script type="text/javascript">
+    /*
+        隐式原型链
+     */
+
+    console.log(Object instanceof Function); //---->true  任何函数都是Function的实例
+    console.log(Array instanceof Function);  // true
+    console.log(Object instanceof Object);
+
+    console.log(Object.prototype);
+    console.log(Object.__proto__.__proto__ === Object.prototype); //true
+
+    console.log(Function.prototype.__proto__ === Object.prototype); //true
+
+
+</script>
+</body>
+</html>

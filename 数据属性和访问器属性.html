@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MrYanG</title>
+</head>
+<body>
+<script>
+
+    var person = {};
+    Object.defineProperty(person, "name",{
+        writable: false,
+        value: "invoker"
+    } );
+
+    console.log(person.name);
+
+    person.name = "lina";
+
+    console.log(person.name);
+
+    /*var person = {};
+    Object.defineProperty(person, "name", {
+        writable: true,
+        value: "Nicholas"
+    });
+    alert(person.name); //"Nicholas"
+    person.name = "Greg";
+    alert(person.name); //"Nicholas"*/
+
+    var obj = {2: "123"};
+    console.log(obj[2]);
+
+</script>
+</body>
+</html>

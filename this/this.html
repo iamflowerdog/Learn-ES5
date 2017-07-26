@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MrYanG</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    /*
+     * 1. 函数在执行时候，浏览器会传递进一个隐含参数，这个参数是
+     * 2.  函数的上下文对象，我们可以使用this该对象
+     */
+    var name = "我是全局中的name"; // ----> name 变量 在浏览器解析中会提前预解析
+
+    function sayName() {
+        console.log(this.name);
+        console.log(this);
+
+    }
+
+
+
+    var obj = new Object();
+    obj.name = "invoker";
+    obj.sayName = sayName;
+
+    var obj2 = new Object();
+    obj2.name = "juggernaut";
+    obj2.sayName = sayName;
+
+    window.sayName();
+    obj.sayName();
+    obj2.sayName();
+
+
+
+
+</script>
+</body>
+</html>

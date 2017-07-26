@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MrYanG</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    var a = 3;
+
+    function fn() {
+        console.log(a);
+        var a = 5;
+    }
+    fn(); // a ----> undefined
+
+    let b = 5;
+
+    function foo() {
+        console.log(b);
+        let b = 6;
+    }
+
+   // foo(); // ----> ReferenceError: b is not defined
+
+    const c = 5;
+
+
+
+</script>
+</body>
+</html>

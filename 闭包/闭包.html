@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MrYanG</title>
+</head>
+<body>
+
+<button>测试1</button>
+<button>测试2</button>
+<button>测试3</button>
+<script type="text/javascript">
+
+    var btn = document.getElementsByTagName("button");
+
+    /*for (var i = 0; i < btn.length; i++){
+        btn[i].onclick = function () {
+            alert(i);
+        }
+    }*/
+
+    for (var i = 0; i < btn.length; i++) {
+        (function (i) {
+            var button = btn[i];
+            button.onclick = function () {
+                alert(i);
+            }
+        })(i)
+    }
+
+
+    function fn1() {
+/*
+ fn2:function fn2()
+        >prototype : Object
+        >__proto__ : function()
+        >Scopes[2] :
+             >0:Closure (fn1)
+             a: undefined
+             >1:Global
+ */
+        var a = 1;//<----此处打断点
+
+        function fn2() {
+            console.log(a);
+        }
+    }
+
+
+    fn1();  // fn()没有返回值也会产生闭包
+
+
+    function showDelay(msg, time) {
+
+        setTimeout(function () {
+            alert(msg)
+        }, time);
+
+    }
+
+    showDelay("atguigu", 2000);
+
+
+
+
+</script>
+</body>
+</html>

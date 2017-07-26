@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>借用构造函数的继承</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    /*
+        1. 核心：在子类构造函数中调用父类的构造函数
+        2. 借用构造函数的继承(假的)
+     */
+
+    function Person(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    function Student(price, name, age) {
+       Person.call(this, name, age);//--->
+//        this.name = name;
+//        this.age = age;
+        this.price = price;
+    }
+
+
+    Student.prototype = new Person();
+
+    var jack = new Student("jack", 19, 19000);
+
+    console.log(jack);//Student {name: 19, age: 19000, price: "jack"}
+
+
+</script>
+</body>
+</html>

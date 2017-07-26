@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MrYanG</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    function Papa() {
+
+        this.props = "i am rich";
+    }
+    console.log(Papa.prototype);
+
+    //通过向原型对象里面添加方法，所有的实例对象都可以看得见
+    Papa.prototype.sayName = function () {
+        console.log("hai ge");
+    };
+
+    var p1 = new Papa();
+
+    p1.sayName();// ---> "i am rich";
+
+    function Son() {
+        this.herit = "my papa is rich";
+    }
+
+    Son.prototype = Papa.prototype;
+
+    Son.prototype.sayRich = function () {
+        console.log(this.herit);
+    };
+    var s1 = new Son();
+
+
+
+    s1.sayRich();
+    s1.sayName();
+
+    console.log(s1.constructor);
+
+
+</script>
+</body>
+</html>
