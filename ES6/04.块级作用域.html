@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MrYanG</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    function f() {
+        console.log('i am outside');
+    }
+
+    (function () {
+
+       if(false){
+           function f() {
+               console.log('i am inside');
+           }
+       }
+
+       f();
+    }())
+
+</script>
+</body>
+</html>
